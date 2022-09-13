@@ -1,5 +1,4 @@
 #include "main.h"
-
 /*
  * print_alphabet - print alphabets
  *
@@ -7,6 +6,8 @@
  * using void print_alphabeth function
  * Return 0
  */
+
+
 void print_alphabet(void)
 {
 	char g;
