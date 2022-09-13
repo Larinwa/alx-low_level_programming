@@ -3,15 +3,15 @@
 /*
  * main - print alphabets
  *
- * Description: use main function
- * print alphabet in lowercases
+ * Description: print letters in lowercase
+ * using void print_alphabeth function
  * Return 0
  */
 void print_alphabet(void)
 {
 	char g;
 
-	for(g= 'a'; g<= 'z'; g++)
+	for(g = 'a'; g <= 'z'; g++)
 	{
 		_putchar(g);
 	}
