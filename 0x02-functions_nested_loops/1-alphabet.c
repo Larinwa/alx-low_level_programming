@@ -1,7 +1,7 @@
 #include "main.h"
 
 /*
- * main - print alphabets
+ * print_alphabet - print alphabets
  *
  * Description: print letters in lowercase
  * using void print_alphabeth function
@@ -11,7 +11,7 @@ void print_alphabet(void)
 {
 	char g;
 
-	for(g = 'a'; g <= 'z'; g++)
+	for (g = 'a'; g <= 'z'; g++)
 	{
 		_putchar(g);
 	}
