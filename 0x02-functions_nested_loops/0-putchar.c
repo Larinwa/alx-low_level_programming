@@ -3,8 +3,9 @@
 /**
  * main - print _putchar variable
  *
- * Description: print _putchar
- * Return : 0 (succes)
+ * Description use main function
+ * this program will use _putchar
+ * Return: 0
  */
 
 int main(void)
