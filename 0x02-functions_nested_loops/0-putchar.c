@@ -1,6 +1,7 @@
 #include "main.h"
 
-/** main - print _putchar variable
+/**
+ * main - print _putchar variable
  *
  * Description: print _putchar
  * Return : 0 (succes)
