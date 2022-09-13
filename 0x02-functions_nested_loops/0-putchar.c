@@ -1,10 +1,11 @@
 #include "main.h"
 
-/** main- print putchar 
+/** main - print _putchar variable
  *
- * Description: prints the value of _putchar
- * Return: 0 always
+ * Description: print _putchar
+ * Return : 0 (succes)
  */
+
 
 int main()
 {
