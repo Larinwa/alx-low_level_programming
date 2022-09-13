@@ -7,13 +7,15 @@
  * print alphabet in lowercases
  * Return 0
  */
-
-void main(void)
+void print_alphabet(void)
 {
-	int ch;
-	for(ch= 'a'; ch<= 'z'; ch++)
-	putchar(ch);
-	putchar('\n');
+	char g;
+
+	for(g= 'a'; g<= 'z'; ch++)
+	{
+		_putchar(g);
+	}
+	_putchar('\n');
 	
 	return (0);
 }
