@@ -1,5 +1,6 @@
 #include "main.h"
-/*
+
+/**
  * print_alphabet -function prints alphabet
  *
  * Description:using print_alphabet(void) function
