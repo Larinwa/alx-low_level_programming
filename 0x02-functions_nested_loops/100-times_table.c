@@ -7,7 +7,7 @@
  * table, starting with 0
  * Return: number
  */
-void print_times_table(int n)
+void  print_times_table(int n)
 {
 	int prod, mult, num;
 
