@@ -1,11 +1,11 @@
-#include "main.h"
+#include "holberton.h"
+
 /**
-*print_times_table - prints the  times table with
-*parameter
-*@n: parameter, the value times table to be printed 
-*Return: 0
-*/
-void print_times_table(int n)
+ * print_times_table - Prints the times table of the input,
+ *                     starting with 0.
+ * @n: The value of the times table to be printed.
+ */
+ void print_times_table(int n)
 {
 	int num, mult, prod;
 
@@ -34,11 +34,11 @@ void print_times_table(int n)
 				}
 				else if (prod <= 99 && prod >= 10)
 				{
-					_putchar((prod / 10) + '0');
+                _putchar((prod / 10) + '0');
 				}
 				_putchar((prod % 10) + '0');
 			}
 			_putchar('\n');
 		}
 	}
-}}
+}
