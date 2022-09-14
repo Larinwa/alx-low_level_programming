@@ -3,7 +3,7 @@
  * print_alphabet -function prints alphabet
  *
  * Description: print letters in lowercase
- * using void print_alphabet function
+ * using print_alphabet(void) function
  * Return 0
  */
 void print_alphabet(void)
