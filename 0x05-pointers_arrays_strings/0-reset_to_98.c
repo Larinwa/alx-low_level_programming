@@ -1,14 +1,9 @@
 #include "main.h"
 
-/**
- * void - check the code 
- *
- * Return: Always 0.
- */
- void reset_to_98(int *n)
+void reset_to_98(int *n)
 {
-    *n = 98;
-    
-    return 0;
+	*n = 98;
+
+	return 0;
 
 }
