@@ -5,19 +5,19 @@
  * @s: pointer to memory area
  * @b: constant value
  * @n: number of bytes to fill
- * Return: return memory area
+ * Return: memory area
  */
 
 char *_memset(char *s, char b, unsigned int n)
 {
 
-	int spacee = n; /* only accept positive sizes */
+	int size = n; /* only accept positive sizes */
 
-	if (space > 0)
+	if (size > 0)
 	{
 		int i;
 
-		for (i = 0; i < space; i++)
+		for (i = 0; i < size; i++)
 			s[i] = b;
 	}
 
