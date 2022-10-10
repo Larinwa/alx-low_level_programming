@@ -6,9 +6,9 @@ char *str_cpy(char *dest, char *src);
 
 /**
  * new_dog - creates a new dog structure
- * @name: Dog's name
- * @age: Dog's age
- * @owner: Dog's Owner
+ * @name: Name of Dog
+ * @age: Age of Dog
+ * @owner: Owner
  * Return: Returns a pointer to newly created dog structure
  */
 dog_t *new_dog(char *name, float age, char *owner)
