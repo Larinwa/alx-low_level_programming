@@ -1,83 +1,72 @@
 #include "lists.h"
 
-size_t looped_listint_count(listint_t *head);
-size_t free_listint_safe(listint_t **h);
-
 /**
- * looped_listint_count - Counts the number of unique nodes
- *                      in a looped listint_t linked list.
- * @head: A pointer to the head of the listint_t to check.
+ * free_listp2 - frees a linked list
+ * @head: head of a list.
  *
- * Return: If the list is not looped - 0.
- *         Otherwise - the number of unique nodes in the list.
+ * Return: no return.
  */
-size_t looped_listint_count(listint_t *head)
+void free_listp2(listp_t **head)
 {
-listint_t *tortoise, *hare;
-size_t nodes = 1;
-if (head == NULL || head->next == NULL)
-return (0);
-tortoise = head->next;
-hare = (head->next)->next;
-while (hare)
-{
-if (tortoise == hare)
-{
-tortoise = head;
-while (tortoise != hare)
-{
-nodes++;
-tortoise = tortoise->next;
-hare = hare->next;
-}
-tortoise = tortoise->next;
-while (tortoise != hare)
-{
-nodes++;
-tortoise = tortoise->next;
-}
-return (nodes);
-}
-tortoise = tortoise->next;
-hare = (hare->next)->next;
-}
-return (0);
+	listp_t *temp;
+	listp_t *curr;
+
+	if (head != NULL)
+	{
+		curr = *head;
+		while ((temp = curr) != NULL)
+		{
+			curr = curr->next;
+			free(temp);
+		}
+		*head = NULL;
+	}
 }
 
 /**
- * free_listint_safe - Frees a listint_t list safely (ie.
- *                     can free lists containing loops)
- * @h: A pointer to the address of
- *     the head of the listint_t list.
+ * free_listint_safe - frees a linked list.
+ * @h: head of a list.
  *
- * Return: The size of the list that was freed.
- *
- * Description: The function sets the head to NULL.
+ * Return: size of the list that was freed.
  */
 size_t free_listint_safe(listint_t **h)
 {
-listint_t *tmp;
-size_t nodes, index;
-nodes = looped_listint_count(*h);
-if (nodes == 0)
-{
-for (; h != NULL && *h != NULL; nodes++)
-{
-tmp = (*h)->next;
-free(*h);
-*h = tmp;
-}
-}
-else
-{
-for (index = 0; index < nodes; index++)
-{
-tmp = (*h)->next;
-free(*h);
-*h = tmp;
-}
-*h = NULL;
-}
-h = NULL;
-return (nodes);
+	size_t nnodes = 0;
+	listp_t *hptr, *new, *add;
+	listint_t *curr;
+
+	hptr = NULL;
+	while (*h != NULL)
+	{
+		new = malloc(sizeof(listp_t));
+
+		if (new == NULL)
+			exit(98);
+
+		new->p = (void *)*h;
+		new->next = hptr;
+		hptr = new;
+
+		add = hptr;
+
+		while (add->next != NULL)
+		{
+			add = add->next;
+			if (*h == add->p)
+			{
+				*h = NULL;
+				free_listp2(&hptr);
+				return (nnodes);
+			}
+		}
+
+		curr = *h;
+		*h = (*h)->next;
+		free(curr);
+		nnodes++;
+	}
+
+	*h = NULL;
+	free_listp2(&hptr);
+	return (nnodes);
 }
