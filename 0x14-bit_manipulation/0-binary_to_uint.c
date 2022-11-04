@@ -8,17 +8,18 @@
  */
 unsigned int binary_to_uint(const char *b)
 {
-	int baby;
-	unsigned int boo = 0;
+	int black;
+	unsigned int white = 0;
 
 	if (!b)
 		return (0);
 
-	for (baby = 0; b[baby]; baby++)
+	for (black = 0; b[black]; black++)
 	{
-		if (b[baby] < '0' || b[baby] > '1')
+		if (b[black] < '0' || b[black] > '1')
 			return (0);
-		boo = 2 * boo + (b[baby] - '0');
+		white = 2 * white + (b[black] - '0');
 	}
 
-	return (boo);
+	return (white);
+}
